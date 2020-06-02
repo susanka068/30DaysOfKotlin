@@ -9,6 +9,7 @@ import android.view.MenuItem
 import android.widget.Button
 import android.widget.Toast
 import android.widget.TextView
+//import kotlin.text.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,12 +17,25 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val addButton: Button = findViewById(R.id.add_button)
+        val countButton : Button = findViewById(R.id.count_button)
         val textDisplay: TextView = findViewById(R.id.resultant_text)
+        val textDisplayTwo : TextView = findViewById(R.id.resultant_texttwo)
         addButton.setOnClickListener{
             //rollDice()
             val randomInt = (1..6).random()
+            //val contUp = randomInt + 5
             textDisplay.text = randomInt.toString()
+          //  textDisplayTwo.text = contUp.toString()
         }
+        countButton.setOnClickListener{
+            //rollDice()
+            val rando = textDisplay.text.toString()
+            var mando = rando.toInt()
+            mando = mando + 1
+           // textDisplay.text = randomInt.toString()
+            textDisplayTwo.text = mando.toString()
+        }
+
        // setSupportActionBar(findViewById(R.id.toolbar))
 
         //findViewById<FloatingActionButton>(R.id.fab).setOnClickListener { view ->
