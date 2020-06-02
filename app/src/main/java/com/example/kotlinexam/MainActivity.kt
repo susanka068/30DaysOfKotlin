@@ -8,6 +8,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
 import android.widget.Toast
+import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
 
@@ -15,9 +16,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val addButton: Button = findViewById(R.id.add_button)
-       /* addButton.setOnClickListener{
-            rollDice()
-        }*/
+        val textDisplay: TextView = findViewById(R.id.resultant_text)
+        addButton.setOnClickListener{
+            //rollDice()
+            textDisplay.text = "Done Rolling"
+        }
        // setSupportActionBar(findViewById(R.id.toolbar))
 
         //findViewById<FloatingActionButton>(R.id.fab).setOnClickListener { view ->
@@ -35,6 +38,7 @@ class MainActivity : AppCompatActivity() {
     private fun rollDice()
     {
         Toast.makeText(this, "whatttt", Toast.LENGTH_SHORT).show()
+        //textDisplay.text = "Done Rolling"
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
