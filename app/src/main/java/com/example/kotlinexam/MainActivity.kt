@@ -19,7 +19,8 @@ class MainActivity : AppCompatActivity() {
         val textDisplay: TextView = findViewById(R.id.resultant_text)
         addButton.setOnClickListener{
             //rollDice()
-            textDisplay.text = "Done Rolling"
+            val randomInt = (1..6).random()
+            textDisplay.text = randomInt.toString()
         }
        // setSupportActionBar(findViewById(R.id.toolbar))
 
