@@ -40,8 +40,8 @@ class MainActivity : AppCompatActivity() {
         val authorDisplay: TextView = findViewById(R.id.author)
         val (a,b) = quoteList[iterInt]
 
-        textDisplay.text = "'" + a + "'"
-        authorDisplay.text = "-" + b
+        textDisplay.text = "'" + a + "'\n"
+        authorDisplay.text = "-  " + b
 
     }
 
