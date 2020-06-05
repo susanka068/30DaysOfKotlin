@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val addButton: Button = findViewById(R.id.add_button)
         addButton.setOnClickListener{
-            rollDice()
+            showQuote()
         }
     }
 
@@ -28,22 +28,17 @@ class MainActivity : AppCompatActivity() {
         return true
     }
 
-    private fun rollDice()
+    private fun showQuote()
     {
-        Toast.makeText(this, "whatttt", Toast.LENGTH_SHORT).show()
-        val randomInt = (1..6).random()
-        val textDisplay: TextView = findViewById(R.id.resultant_text)
-        textDisplay.text = randomInt.toString()
-        val diceimage : ImageView = findViewById(R.id.dice_image)
-        val drawableResource = when(randomInt){
-            1 -> R.drawable.dice_1
-            2 -> R.drawable.dice_2
-            3 -> R.drawable.dice_3
-            4 -> R.drawable.dice_4
-            5 -> R.drawable.dice_5
-            else -> R.drawable.dice_6
-        }
-        diceimage.setImageResource(drawableResource)
+        val quoteList = listOf(Pair("This quote 1" , "author1"),Pair("quote2","author 1"),Pair("quote 3","author3"))
+        val randomInt = (0..quoteList.size-1).random()
+        val textDisplay: TextView = findViewById(R.id.quote)
+        val authorDisplay: TextView = findViewById(R.id.author)
+        val (a,b) = quoteList[randomInt]
+
+        textDisplay.text = "'" + a + "'"
+        authorDisplay.text = "-" + b
+
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
