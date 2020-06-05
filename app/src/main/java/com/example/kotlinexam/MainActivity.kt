@@ -9,7 +9,7 @@ import android.view.MenuItem
 import android.widget.Button
 import android.widget.Toast
 import android.widget.TextView
-//import kotlin.text.*
+import android.widget.ImageView
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,35 +17,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val addButton: Button = findViewById(R.id.add_button)
-        val countButton : Button = findViewById(R.id.count_button)
-        val textDisplay: TextView = findViewById(R.id.resultant_text)
-        val textDisplayTwo : TextView = findViewById(R.id.resultant_texttwo)
         addButton.setOnClickListener{
-            //rollDice()
-            val randomInt = (1..6).random()
-            //val contUp = randomInt + 5
-            textDisplay.text = randomInt.toString()
-          //  textDisplayTwo.text = contUp.toString()
+            rollDice()
         }
-        countButton.setOnClickListener{
-            //rollDice()
-            val rando = textDisplay.text.toString()
-            var mando = rando.toInt()
-            mando = mando + 1
-           // textDisplay.text = randomInt.toString()
-            textDisplayTwo.text = mando.toString()
-        }
-
-       // setSupportActionBar(findViewById(R.id.toolbar))
-
-        //findViewById<FloatingActionButton>(R.id.fab).setOnClickListener { view ->
-          //  Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-            //        .setAction("Action", null).show()
-        //}
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
+        // Inflate the menu; this adds items to the action bar if it is present
         menuInflater.inflate(R.menu.menu_main, menu)
         return true
     }
@@ -53,7 +31,19 @@ class MainActivity : AppCompatActivity() {
     private fun rollDice()
     {
         Toast.makeText(this, "whatttt", Toast.LENGTH_SHORT).show()
-        //textDisplay.text = "Done Rolling"
+        val randomInt = (1..6).random()
+        val textDisplay: TextView = findViewById(R.id.resultant_text)
+        textDisplay.text = randomInt.toString()
+        val diceimage : ImageView = findViewById(R.id.dice_image)
+        val drawableResource = when(randomInt){
+            1 -> R.drawable.dice_1
+            2 -> R.drawable.dice_2
+            3 -> R.drawable.dice_3
+            4 -> R.drawable.dice_4
+            5 -> R.drawable.dice_5
+            else -> R.drawable.dice_6
+        }
+        diceimage.setImageResource(drawableResource)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

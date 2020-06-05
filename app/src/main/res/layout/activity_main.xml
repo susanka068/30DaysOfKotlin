@@ -10,7 +10,13 @@
     tools:context=".MainActivity"
 
        >
-
+    <ImageView
+        android:id="@+id/dice_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity = "center"
+        android:src = "@drawable/dice_1"
+        />
     <TextView
         android:id="@+id/resultant_text"
         android:layout_width="wrap_content"
@@ -24,21 +30,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/add_label"
-        android:layout_gravity = "center"
-        />
-    <Button
-        android:id="@+id/count_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/countUp"
-        android:layout_gravity = "center"
-        />
-    <TextView
-        android:id="@+id/resultant_texttwo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Gonna Show up soon"
-        android:textSize="35sp"
         android:layout_gravity = "center"
         />
 </LinearLayout>
