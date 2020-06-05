@@ -11,7 +11,7 @@ import android.widget.Toast
 import android.widget.TextView
 import android.widget.ImageView
 
-val quoteList = listOf(Pair("This quote 1" , "author1"),Pair("quote2","author 1"),Pair("quote 3","author3"))
+val quoteList = listOf(Pair("Even your greatest mistakes shouldn't stop you from moving forward." , "Edward Elric"),Pair("I'll take a potato chip....and eat it!","Light Yagami"),Pair("the circumstances of one's birth are irrevelant. It is what you do with the gift of life that determines who you are.","Mewtwo"),Pair("It is never a crime to just exist, no matter how dangerous your weapons are.","Franky"))
 var iterInt = 0 ;
 class MainActivity : AppCompatActivity() {
 
